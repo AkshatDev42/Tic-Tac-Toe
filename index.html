@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Poetsen+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="title">$Axat</div>
+        <div class="game"><snap class="x x-board">X</snap>TIC TAC T<snap class="x o-board">O</snap>E</div>
+    </header>
+    <div class="board">
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+        <div class="boxes"></div>
+    </div>
+        <div id="Player1"></div>
+        <div id = "p1-turn">Your Turn!</div>
+        <div id="Player2"></div>
+        <div id = "p2-turn">Your Turn!</div>
+        <div id="enter-name">
+            <div>Enter Player Names</div>
+                <input type = "text" id = "player1-name" placeholder="Player-1 Name">
+                <input type= "text" id="player2-name" placeholder="Player-2 Name">
+            <div>
+                <button id = "submit-name">&#9654;&nbsp;Play</button>
+            </div>
+        </div>
+        <div id = "choose">
+            <div>
+            </div>
+            <div>Choose Your Sign</div>
+            <div id = "signs">
+                <div class = "x-board" id = "choose-x">X 
+                </div>
+                <div class = "o-board" id="choose-o">O
+                </div>
+            </div>
+        </div>
+        <div id="p1-turn-shade"></div>
+        <div id="p2-turn-shade"></div>
+        <div id = "declare-winner">
+            <div id = "winner-name"></div>
+            <div>Congratulations! You Won The Match</div>
+            <div id = "trophy">&#x1F3C6;</div>
+            <button class="play-again-button">&#9654;&nbsp;Play Again</button>
+        </div>
+        <div id="draw-match">
+            <div>Oops!</div>
+            <div>Match has drawn</div>
+            <div id="handshake">&#x1F91D;</div>
+            <button class="play-again-button">&#9654;&nbsp;Play Again</button>
+        </div>
+        <script src="index.js"></script>
+</body>
+
+</html>

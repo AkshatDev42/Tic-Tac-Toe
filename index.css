@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width:100vw;
+    height: 12vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: blue;
+}
+
+.title,
+.game,
+.x {
+    text-align: center;
+    font-size: 6vh;
+    padding: 2.9vh;
+    flex-basis: 40vw;
+    line-height: 5vh;
+    color: white;
+}
+.x {
+    flex-basis: 5vw;
+    font-family: Arial Rounded MT;
+    font-size: 9vh;
+    border: none;
+}
+
+.game .x {
+    font-size: 9vh;
+    font-family: inherit;
+    padding: 0.3vw;
+}
+
+.title {
+    font-family: "Bungee Shade", sans-serif;
+    font-weight: 400;
+    position: relative;
+    font-style: normal;
+    z-index:3;
+
+}
+
+.game {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.board {
+    display: flex;
+    height: 80vh;
+    width: 39vw;
+    margin: 2vh auto;
+    border-radius: 1.3vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgb(56, 56, 238);
+}
+.boxes {
+    font-family: Arial Rounded MT;
+    cursor: pointer;
+    font-size:900%;
+    margin-top: 1vh;
+    text-align: center;
+    flex-basis: 31%;
+    border-radius: 1vh;
+    flex-shrink:3;
+    border: 2px solid black;
+    box-shadow: 2px 2px 3px black;
+    background-color: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 30%;
+}
+.x-board{
+color: rgb(0, 153, 255);
+text-shadow: 
+-1px 1px 3px rgba(12, 31, 197, 0.8), /* Top left */
+ 1px 1px 3px rgba(12, 31, 197, 0.8), /* Bottom right */
+ 1px -1px 3px rgba(12, 31, 197, 0.8), /* Top right */
+-1px -1px 3px rgba(12, 31, 197, 0.8); /* Bottom left */
+}
+.o-board{
+color: rgb(0, 204, 102);
+text-shadow: 
+-1px -1px 2px rgba(233, 120, 21, 0.8), /* Top left */
+ 1px 1px 2px rgba(233, 120, 21, 0.8),/* Bottom right */
+ 1px -1px 2px rgba(233, 120, 21, 0.8), /* Top right */
+-1px 1px 2px rgba(233, 120, 21, 0.8); /* Bottom left */
+}
+#Player1,#Player2{
+    position:absolute;
+    height:20vh;
+    width:25vw;
+    top:20%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#Player1,#Player2,#p1-turn,#p2-turn{
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,' sans-serif';
+    font-weight: 700;
+    font-size: 340%;
+    visibility: hidden;
+    white-space:normal;
+}
+#Player1{
+    left:1%;
+}
+#Player2{
+    right:1%;
+  }
+  
+  #enter-name input[type="text"],#submit-name{
+      display: block;
+      margin: 6vh 2vw;
+      height: 8vh;
+      width:80%;
+      border-radius: 2vh;
+      box-shadow: 3px 3px 2px blue;
+      box-sizing: border-box;
+      margin: 6vh auto;
+      font-size: 90%;
+      padding: 0 2vw;
+    }
+    #submit-name,.play-again-button{
+    height: 7vh;
+    width: 30%;
+    display: block;
+    margin:0 auto;
+    text-align: center;
+    color: rgb(255, 234, 0);
+    background-color: rgb(13, 226, 24);
+    cursor: pointer;
+    border-radius: 2vh;
+    font-size: 90%;
+    box-shadow: 3px 4px 3px rgb(33, 67, 1);
+}
+.visible{
+    animation-name: visible;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes visible{
+    from{
+        opacity:0;
+        visibility:hidden;
+    }
+    to{
+        opacity:1;
+        visibility:visible;
+    }
+}
+#p1-turn,#p2-turn{
+    height: 12vh;
+    width: 25vw;
+    position: absolute;
+    top: 45vh;
+}
+#p1-turn{
+    left: 2vw;
+}
+#p2-turn{
+    text-align: right;
+    right: 2vw;
+}
+#p1-turn-shade,#p2-turn-shade{
+    width: 50vw;
+    height:88vh;
+    position: absolute;
+    top:5vw;
+    opacity: 0.8;
+    z-index: -1;
+}
+#p1-turn-shade{
+    left:0;
+}
+#p2-turn-shade{
+    right: 0;
+}
+.turn-shade {
+    animation-name: turn-shade;
+    animation-duration: 2s; /* Total animation time */
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s; /* No delay before starting */
+}
+
+@keyframes turn-shade {
+    0% {
+        background-color: rgb(255, 255, 255); 
+        box-shadow: 0px 0px 10px 5px rgba(115, 194, 228, 0.5); 
+        transform: scale(0.1); 
+    }
+    25% {
+        background-color: rgb(115, 194, 228); 
+        box-shadow: 0px 0px 20px 10px rgba(40, 85, 152, 0.5); 
+        transform: scale(0.5); 
+    }
+    50% {
+        background-color: rgb(40, 85, 152); 
+        box-shadow: 0px 0px 30px 15px rgba(223, 87, 155, 0.5); 
+        transform: scale(1); 
+    }
+    75% {
+        background-color: rgb(223, 87, 155); 
+        box-shadow: 0px 0px 20px 10px rgba(115, 194, 228, 0.5); 
+        transform: scale(0.1); 
+    }
+    100% {
+        background-color: rgb(255, 255, 255); 
+        box-shadow: 0px 0px 10px 5px rgba(223, 87, 155, 0.5); 
+        transform: scale(0); 
+    }
+}
+
+#signs{
+    display: flex;
+    height: 30vh;
+    justify-content: space-around;
+    font-size: 400%;
+    font-family: Arial Rounded MT;
+}
+#signs div{
+    border:2px solid black;
+    flex-basis: 40%;
+    border-radius: 2vh;
+    box-shadow: 2px 2px 3px black,
+    -2px -2px 3px black;
+    cursor: pointer;
+}
+#enter-name,#choose,#declare-winner,#draw-match{
+    background-color: black;
+    position:absolute;
+    height: 65vh;
+    width: 50vw;
+    top: 20vh;
+    background-color: white;
+    left: 25vw;
+    font-family:'Lucida Sans';
+    border:2px solid black;
+    box-shadow: 2px 2px 3px black,
+    -2px -2px 3px black;
+    font-size: 220%;
+    padding: 2vh 3vw;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 2vh;
+    visibility: hidden;
+}
+#choose div{
+    margin: 3vh 0vw;
+}
+#declare-winner div{
+        margin: 1.5vh;
+}
+#trophy,#handshake{
+    margin:0;
+    font-size: 500%;
+}
+.play-again-button{
+    width:18vw;
+    height: 7vh;
+}
+.title{
+    animation-name: intro;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-direction:normal;
+}
+@keyframes intro {
+    0%{
+       transform:scale(0);
+       opacity: 1;
+    }
+    50%{
+        transform: scale(2vh);
+        color:black;
+    }
+    100%{
+        transform: scale(5vh);
+        color: white
+    }
+}
+.game{
+    opacity: 0;
+    animation-name: game-intro;
+    animation-duration: 1s;
+    animation-delay: 1.2s;
+    animation-fill-mode:forwards;
+    animation-direction: reverse;
+}
+@keyframes game-intro {
+    from{
+        transform: translate(0vw);
+        opacity:1;
+    }
+    to{
+        transform: translateX(-55vw);
+        opacity:0;
+    }
+}
